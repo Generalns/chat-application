@@ -108,4 +108,5 @@ docker-compose -f docker-compose.yml up
 
 Alternatively you can run the each program on your machine without docker but in this case you will have to install the dependencies by hand and it is more time consuming. Also if you choose to go this path even though I advise you not, do not forget to install Kafka, Zookeeper and start them at relevant ports.
 
+**Note:** In this project the database configurations are made for my personal account and they are not kept in an .env file which is not a good practice. The database used is a free mysql database which can only contain 5MBs of data and by the time that you are checking this project out it might be shut down. Please make your own database configurations accordingly in both /backend/database/database.py file and /kafka_consumer/kafka_consumer.py file.
 
