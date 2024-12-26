@@ -12,7 +12,8 @@ const AuthComponent = ({ setCurrentUser }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    
+    
     const apiUrl = "http://localhost:8000" + (isLogin ? "/login" : "/register");
 
     const requestBody = {
@@ -21,6 +22,8 @@ const AuthComponent = ({ setCurrentUser }) => {
       // Include passwordRepeat only for registration
       ...(isLogin ? {} : { passwordRepeat }),
     };
+
+    console.log("sasa");
 
     try {
       const response = await fetch(apiUrl, {
@@ -43,7 +46,7 @@ const AuthComponent = ({ setCurrentUser }) => {
       console.log("API request succeeded:", responseData);
 
       if (responseData) {
-        setCurrentUser(responseData);
+        setCurrentUser(responseData.username);
       }
       // Reset form fields
       //   setUsername("");
